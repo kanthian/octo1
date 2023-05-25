@@ -1,3 +1,2 @@
-# octo1
 # Katie Grinnan's Octopus
-# Team: Ryan, Cameron, Josh, Sri 
+# Team: Katie, Ryan, Cameron, Josh, Sri 
