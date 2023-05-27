@@ -29,4 +29,4 @@ To kill the python process, run:
 Logs are created in the `logs` dir in the same directory as the
 launcher script. To tail the latest logfile, run:
 
-    tail -f /home/pi/logs/octopusbus-latest.txt
+    tail -n+0 -f /home/pi/logs/octopusbus-latest.txt
