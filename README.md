@@ -18,7 +18,7 @@ named "octopusbus". To connect to that session, run:
 
     tmux attach -t octopusbus
 
-You can kill the tmux session with the shortcut 'C-b C-x', where
+You can kill the tmux session with the shortcut 'C-b x', where
 C is the Control key. You can scroll in the tmux window using 'C-b
 [', then 'C-c' to stop scrolling.
 
