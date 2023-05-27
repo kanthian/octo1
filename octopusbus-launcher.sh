@@ -9,6 +9,7 @@ LOGFILE="$LOGDIR/octopusbus-$(date +"%Y%m%d_%H%M%S").txt"
 mkdir -p $LOGDIR
 touch $LOGFILE
 ln -sf $LOGFILE $LOGDIR/octopusbus-latest.txt
+echo "Writing to logfile: $LOGFILE"
 
 # execute python script in a new named tmux session "octopusbus"
 # note: python -u flag disables buffering writes to stdout
