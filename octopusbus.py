@@ -2,6 +2,9 @@ import board, smbus, busio, adafruit_mpr121, pygame
 from adafruit_extended_bus import ExtendedI2C as I2C
 
 path = "/home/pi/audionumbers/"
+#path = "/home/pi/testnumbers/"
+
+print("Starting octopusbus.py with sounds path=" + path)
 
 sounds = ["1.wav", "2.wav", "3.wav", "4.wav", "5.wav", "6.wav", "7.wav", "8.wav", "9.wav", "10.wav", "11.wav", "12.wav",
         "13.wav", "14.wav", "15.wav", "16.wav", "17.wav", "18.wav", "19.wav", "20.wav", "21.wav", "22.wav", "23.wav", "24.wav",
