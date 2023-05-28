@@ -1,5 +1,5 @@
 # Katie Grinnan's Octopus
-# Team: Katie, Ryan, Cameron, Josh, Sri 
+# Team: Katie, Ryan, Cameron, Josh, Sri, Hike, Bin
 
 ## Setting up I2C config
 
