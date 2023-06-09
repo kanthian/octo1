@@ -1,15 +1,36 @@
 # Katie Grinnan's Octopus
 # Team: Katie, Ryan, Cameron, Josh, Sri, Hike, Bin
 
-## Setting up I2C config
+## Setting up Raspberry PI
 
-Copy `config.txt` file into the `/boot/` dir as root.
+### Install packages
 
-## Setting script to run on reboot
+    sudo apt install git tmux
 
-Run `crontab -e` and add the line:
+### Clone repo
 
-    @reboot bash /home/pi/octopusbus-launcher.sh
+    git clone https://github.com/kanthian/octo1.git
+    cd octo1
+
+### Setup I2C
+
+Copy `config.txt` file into the `/boot/` dir as root to configure I2C:
+
+    sudo cp config.txt /boot/
+
+### Run on boot
+
+Set script to run on reboot using cron:
+
+    crontab -e # pick an editor, or use EDITOR=... env var
+
+    # add the following into the editor and save
+    # you may need to change /home/pi/octo1 to whereever you cloned the repo
+    @reboot bash /home/pi/octo1/octopusbus-launcher.sh
+
+### Reboot safely
+
+    sudo reboot
 
 ## Connecting to running script via tmux
 
