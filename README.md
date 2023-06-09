@@ -3,7 +3,7 @@
 
 ## Setting up Raspberry PI
 
-### Install packages
+### Install system packages
 
     sudo apt install git tmux
 
@@ -11,6 +11,10 @@
 
     git clone https://github.com/kanthian/octo1.git
     cd octo1
+
+### Install Python packages
+
+    sudo pip3 install pygame Adafruit-Blinka adafruit-extended-bus adafruit-circuitpython-mpr121
 
 ### Setup I2C
 
@@ -39,6 +43,8 @@ named "octopusbus". To connect to that session, run:
 
     tmux attach -t octopusbus
 
+### Stopping the script
+
 You can kill the tmux session with the shortcut 'C-b x', where
 C is the Control key. You can scroll in the tmux window using 'C-b
 [', then 'C-c' to stop scrolling.
@@ -47,7 +53,12 @@ To kill the python process, run:
 
     pkill -f '^python.*octopusbus.py'
 
+### Accessing logfiles
+
 Logs are created in the `logs` dir in the same directory as the
 launcher script. To tail the latest logfile, run:
 
     tail -n+0 -f /home/pi/logs/octopusbus-latest.txt
+
+Every time the `octopusbus-launcher.sh` runs it will create a new timestamped
+logfile and change the `octopus-latest.txt` symlink to point to it.
