@@ -53,7 +53,9 @@ for i, i2c in enumerate(i2c_array):
     for device_num in range(i2c_device_counts[i]):
         board_letter = chr(ord('A') + board_count)
         try:
-            mpr121_array.append(adafruit_mpr121.MPR121(i2c, address=(START_I2C_ADDRESS + device_num)))
+            mpr121 = adafruit_mpr121.MPR121(i2c, address=(START_I2C_ADDRESS + device_num))
+            mpr121._write_register_byte(adafruit_mpr121.MPR121_CONFIG1, 0x10|0xB0) # 16uA charge current, 34 sample avg
+            mpr121_array.append(mpr121)
             print ("board " + board_letter + " connected")
         except:
             print ("board " + board_letter + " not connected")
@@ -65,6 +67,8 @@ speaker_volume = 1.0
 pygame.mixer.music.set_volume(speaker_volume)
 
 while True:
+    #print("0.0: {} / {}".format(mpr121[0].filtered_data(0), mpr121[0].baseline_data(0)))
+
     for i in range (12):
         for board_number, mpr121 in enumerate(mpr121_array):
             board_letter = chr(ord('A') + board_number)
