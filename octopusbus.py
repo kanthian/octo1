@@ -58,6 +58,7 @@ for i, i2c in enumerate(i2c_array):
             mpr121_array.append(mpr121)
             print ("board " + board_letter + " connected")
         except:
+            mpr121_array.append(None)
             print ("board " + board_letter + " not connected")
         board_count += 1
 
@@ -67,11 +68,14 @@ speaker_volume = 1.0
 pygame.mixer.music.set_volume(speaker_volume)
 
 while True:
-    #print("0.0: {} / {}".format(mpr121[0].filtered_data(0), mpr121[0].baseline_data(0)))
+    #first_board = [x for x in mpr121_array if x is not None][0]
+    #print("0.0: {} / {}".format(first_board.filtered_data(0), first_board.baseline_data(0)))
 
     for i in range (12):
         for board_number, mpr121 in enumerate(mpr121_array):
             board_letter = chr(ord('A') + board_number)
+            if mpr121 is None:
+                pass
             try:
                 if mpr121[11-i].value:
                     print('you touched sensor (' + board_letter + ' pad # {}!'.format (i+1))
