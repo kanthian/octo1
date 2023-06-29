@@ -1,4 +1,4 @@
-# Katie Grinnan's Octopus
+# Katie Grinnan's 1st Octopus
 # Team: Katie, Ryan, Cameron, Josh, Sri, Hike, Bin
 
 ## Setting up Raspberry PI
